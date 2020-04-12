@@ -9,7 +9,11 @@
 import Foundation
 
 struct DecodeJSONResultDecision: Decision {
-    let decoder = JSONDecoder()
+    let decoder: JSONDecoder
+    
+    init(decoder: JSONDecoder = JSONDecoder()) {
+        self.decoder = decoder
+    }
     
     func shouldApply<Req>(request: Req, data: Data, response: HTTPURLResponse) -> Bool where Req: Request {
         return true
