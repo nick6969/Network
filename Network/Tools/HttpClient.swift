@@ -17,7 +17,14 @@ struct HTTPClient {
     }
 
     func send<Req: Request>(_ request: Req,
-                            decisions: [Decision]? = nil,
+                            plugins: [PluginType] = [],
+                            handler: @escaping (Result<Req.Response, Error>) -> Void) {
+        self.send(request, decisions: request.decisions, plugins: plugins, handler: handler)
+    }
+    
+    private
+    func send<Req: Request>(_ request: Req,
+                            decisions: [Decision] = [],
                             plugins: [PluginType] = [],
                             handler: @escaping (Result<Req.Response, Error>) -> Void) {
         
@@ -45,12 +52,17 @@ struct HTTPClient {
                 return
             }
             
-            self.handleDecision(request, data: data, response: response, decisions: decisions ?? request.decisions, handler: handler)
+            self.handleDecision(request, data: data, response: response, decisions: decisions, plugins: plugins, handler: handler)
         }.resume()
     }
     
     private
-    func handleDecision<Req: Request>(_ request: Req, data: Data, response: HTTPURLResponse, decisions: [Decision], handler: @escaping (Result<Req.Response, Error>) -> Void) {
+    func handleDecision<Req: Request>(_ request: Req,
+                                      data: Data,
+                                      response: HTTPURLResponse,
+                                      decisions: [Decision],
+                                      plugins: [PluginType],
+                                      handler: @escaping (Result<Req.Response, Error>) -> Void) {
         
         if decisions.isEmpty {
             fatalError("No decision left but did not reach a stop.")
@@ -60,16 +72,16 @@ struct HTTPClient {
         let currentDecision = decisions.removeFirst()
         
         if !currentDecision.shouldApply(request: request, data: data, response: response) {
-            handleDecision(request, data: data, response: response, decisions: decisions, handler: handler)
+            handleDecision(request, data: data, response: response, decisions: decisions, plugins: plugins, handler: handler)
             return
         }
 
         currentDecision.apply(request: request, data: data, response: response) { action in
             switch action {
             case .next(let data, let response):
-                self.handleDecision(request, data: data, response: response, decisions: decisions, handler: handler)
+                self.handleDecision(request, data: data, response: response, decisions: decisions, plugins: plugins, handler: handler)
             case .restart(let decisions):
-                self.send(request, decisions: decisions, handler: handler)
+                self.send(request, decisions: decisions, plugins: plugins, handler: handler)
             case .errored(let error):
                 handler(.failure(error))
             case .done(let value):
