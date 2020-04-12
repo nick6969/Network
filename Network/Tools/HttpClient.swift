@@ -12,14 +12,14 @@ struct HTTPClient {
 
     let session: Session
     
-    // TODO: - insert certificate pinning
-    // TODO: - insert Plugin func willSend(_ request: URLRequest) / func didReceive(_ result: (Data?, URLResponse?, Error?))
-    
     init(session: Session) {
         self.session = session
     }
 
-    func send<Req: Request>(_ request: Req, decisions: [Decision]? = nil, handler: @escaping (Result<Req.Response, Error>) -> Void) {
+    func send<Req: Request>(_ request: Req,
+                            decisions: [Decision]? = nil,
+                            plugins: [PluginType] = [],
+                            handler: @escaping (Result<Req.Response, Error>) -> Void) {
         
         let urlRequest: URLRequest
         do {
@@ -29,7 +29,11 @@ struct HTTPClient {
             return
         }
         
+        plugins.forEach { $0.willSend(request, urlRequest: urlRequest) }
+        
         session.dataTask(with: urlRequest) { data, response, error in
+        
+            plugins.forEach { $0.didReceive(request, result: (data, response, error)) }
             
             guard let data = data else {
                 handler(.failure(error ?? ResponseError.nilData))
