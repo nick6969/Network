@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010BF26924434CF6005BE555 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BF26824434CF6005BE555 /* Session.swift */; };
+		010BF27B24435586005BE555 /* SessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BF26A24434D77005BE555 /* SessionMock.swift */; };
 		011307BC2441791800F8E6C0 /* FormURLAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011307BB2441791800F8E6C0 /* FormURLAdapter.swift */; };
 		011307BE24417AB600F8E6C0 /* NoneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011307BD24417AB600F8E6C0 /* NoneAdapter.swift */; };
 		0186FB192440BF54004C7274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186FB182440BF54004C7274 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		010BF26824434CF6005BE555 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		010BF26A24434D77005BE555 /* SessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMock.swift; sourceTree = "<group>"; };
 		011307BB2441791800F8E6C0 /* FormURLAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormURLAdapter.swift; sourceTree = "<group>"; };
 		011307BD24417AB600F8E6C0 /* NoneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneAdapter.swift; sourceTree = "<group>"; };
 		0186FB152440BF54004C7274 /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 		0186FB2E2440CC5F004C7274 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				010BF26A24434D77005BE555 /* SessionMock.swift */,
 				0186FB422440D7D2004C7274 /* Decision */,
 				0186FB372440D6E9004C7274 /* Adapter */,
 				0186FB2C2440BFB8004C7274 /* Method.swift */,
@@ -242,6 +245,7 @@
 				0186FB362440D6A5004C7274 /* ContentType.swift in Sources */,
 				0186FB342440D684004C7274 /* NetworkError.swift in Sources */,
 				0186FB322440CEE4004C7274 /* Request.swift in Sources */,
+				010BF27B24435586005BE555 /* SessionMock.swift in Sources */,
 				0186FB4E2440E61B004C7274 /* HttpClient.swift in Sources */,
 				0186FB192440BF54004C7274 /* AppDelegate.swift in Sources */,
 				011307BE24417AB600F8E6C0 /* NoneAdapter.swift in Sources */,
