@@ -32,7 +32,6 @@
 		0186FB4A2440E5A0004C7274 /* DecodeJSONResultDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186FB492440E5A0004C7274 /* DecodeJSONResultDecision.swift */; };
 		0186FB4C2440E5AC004C7274 /* RetryDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186FB4B2440E5AC004C7274 /* RetryDecision.swift */; };
 		0186FB4E2440E61B004C7274 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186FB4D2440E61B004C7274 /* HttpClient.swift */; };
-		0186FB502440F04A004C7274 /* EmptyResponseDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186FB4F2440F04A004C7274 /* EmptyResponseDecision.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 		0186FB492440E5A0004C7274 /* DecodeJSONResultDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeJSONResultDecision.swift; sourceTree = "<group>"; };
 		0186FB4B2440E5AC004C7274 /* RetryDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryDecision.swift; sourceTree = "<group>"; };
 		0186FB4D2440E61B004C7274 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		0186FB4F2440F04A004C7274 /* EmptyResponseDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponseDecision.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +142,6 @@
 			children = (
 				0186FB432440D7D9004C7274 /* Decision.swift */,
 				0186FB472440E592004C7274 /* StatusCodeDecision.swift */,
-				0186FB4F2440F04A004C7274 /* EmptyResponseDecision.swift */,
 				0186FB492440E5A0004C7274 /* DecodeJSONResultDecision.swift */,
 				0186FB4B2440E5AC004C7274 /* RetryDecision.swift */,
 			);
@@ -254,7 +251,6 @@
 				011307BE24417AB600F8E6C0 /* NoneAdapter.swift in Sources */,
 				0168187D2442D40B00B0D4B1 /* PluginType.swift in Sources */,
 				0186FB412440D735004C7274 /* JSONRequestAdapter.swift in Sources */,
-				0186FB502440F04A004C7274 /* EmptyResponseDecision.swift in Sources */,
 				0186FB4A2440E5A0004C7274 /* DecodeJSONResultDecision.swift in Sources */,
 				0186FB4C2440E5AC004C7274 /* RetryDecision.swift in Sources */,
 				0186FB2D2440BFB8004C7274 /* Method.swift in Sources */,

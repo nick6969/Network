@@ -46,7 +46,6 @@ extension Request {
         return [
             RetryDecision(retryCount: 2),
             StatusCodeDecision(),
-            EmptyResponseDecision(),
             DecodeJSONResultDecision()
         ]
     }
