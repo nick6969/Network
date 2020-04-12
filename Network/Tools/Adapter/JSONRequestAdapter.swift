@@ -11,7 +11,7 @@ import Foundation
 struct JSONRequestAdapter: Adapter {
     let data: [String: Any]
     
-    func adapted(_ request: URLRequest) throws -> URLRequest {
+    func apply(_ request: URLRequest) throws -> URLRequest {
         var request = request
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try JSONSerialization.data(withJSONObject: data, options: [])

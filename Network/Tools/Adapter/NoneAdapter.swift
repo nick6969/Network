@@ -9,7 +9,7 @@
 import Foundation
 
 struct NoneAdapter: Adapter {
-    func adapted(_ request: URLRequest) throws -> URLRequest {
+    func apply(_ request: URLRequest) throws -> URLRequest {
         return request
     }
 }

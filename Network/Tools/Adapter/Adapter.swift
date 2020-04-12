@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Adapter {
-    func adapted(_ request: URLRequest) throws -> URLRequest
+    func apply(_ request: URLRequest) throws -> URLRequest
 }

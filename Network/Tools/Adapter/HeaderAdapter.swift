@@ -11,7 +11,7 @@ import Foundation
 struct HeaderAdapter: Adapter {
     let data: [String: String]?
     
-    func adapted(_ request: URLRequest) throws -> URLRequest {
+    func apply(_ request: URLRequest) throws -> URLRequest {
         guard let data = data else { return request }
         var request = request
         for (key, value) in data {
