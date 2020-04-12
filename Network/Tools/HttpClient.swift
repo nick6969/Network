@@ -10,13 +10,12 @@ import Foundation
 
 struct HTTPClient {
 
-    let session: URLSession
+    let session: Session
     
-    // TODO: - Mock URLSession To Test
     // TODO: - insert certificate pinning
     // TODO: - insert Plugin func willSend(_ request: URLRequest) / func didReceive(_ result: (Data?, URLResponse?, Error?))
     
-    init(session: URLSession) {
+    init(session: Session) {
         self.session = session
     }
 

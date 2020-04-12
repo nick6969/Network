@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010BF26924434CF6005BE555 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010BF26824434CF6005BE555 /* Session.swift */; };
 		011307BC2441791800F8E6C0 /* FormURLAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011307BB2441791800F8E6C0 /* FormURLAdapter.swift */; };
 		011307BE24417AB600F8E6C0 /* NoneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011307BD24417AB600F8E6C0 /* NoneAdapter.swift */; };
 		0186FB192440BF54004C7274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186FB182440BF54004C7274 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010BF26824434CF6005BE555 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		011307BB2441791800F8E6C0 /* FormURLAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormURLAdapter.swift; sourceTree = "<group>"; };
 		011307BD24417AB600F8E6C0 /* NoneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneAdapter.swift; sourceTree = "<group>"; };
 		0186FB152440BF54004C7274 /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				0186FB332440D684004C7274 /* NetworkError.swift */,
 				0186FB312440CEE4004C7274 /* Request.swift */,
 				0186FB352440D6A5004C7274 /* ContentType.swift */,
+				010BF26824434CF6005BE555 /* Session.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				0186FB2D2440BFB8004C7274 /* Method.swift in Sources */,
 				0186FB482440E592004C7274 /* StatusCodeDecision.swift in Sources */,
 				0186FB302440CDF1004C7274 /* Adapter.swift in Sources */,
+				010BF26924434CF6005BE555 /* Session.swift in Sources */,
 				0186FB3F2440D726004C7274 /* ContentAdapter.swift in Sources */,
 				0186FB442440D7D9004C7274 /* Decision.swift in Sources */,
 				0186FB3B2440D711004C7274 /* QueryAdapter.swift in Sources */,
