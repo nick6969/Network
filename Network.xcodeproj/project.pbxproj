@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		011307BC2441791800F8E6C0 /* FormURLAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011307BB2441791800F8E6C0 /* FormURLAdapter.swift */; };
 		011307BE24417AB600F8E6C0 /* NoneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011307BD24417AB600F8E6C0 /* NoneAdapter.swift */; };
+		0168187D2442D40B00B0D4B1 /* PluginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168187C2442D40B00B0D4B1 /* PluginType.swift */; };
 		0186FB192440BF54004C7274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186FB182440BF54004C7274 /* AppDelegate.swift */; };
 		0186FB1D2440BF54004C7274 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186FB1C2440BF54004C7274 /* ViewController.swift */; };
 		0186FB202440BF54004C7274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0186FB1E2440BF54004C7274 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		011307BB2441791800F8E6C0 /* FormURLAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormURLAdapter.swift; sourceTree = "<group>"; };
 		011307BD24417AB600F8E6C0 /* NoneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoneAdapter.swift; sourceTree = "<group>"; };
+		0168187C2442D40B00B0D4B1 /* PluginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginType.swift; sourceTree = "<group>"; };
 		0186FB152440BF54004C7274 /* Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0186FB182440BF54004C7274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0186FB1C2440BF54004C7274 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				0186FB332440D684004C7274 /* NetworkError.swift */,
 				0186FB312440CEE4004C7274 /* Request.swift */,
 				0186FB352440D6A5004C7274 /* ContentType.swift */,
+				0168187C2442D40B00B0D4B1 /* PluginType.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				0186FB4E2440E61B004C7274 /* HttpClient.swift in Sources */,
 				0186FB192440BF54004C7274 /* AppDelegate.swift in Sources */,
 				011307BE24417AB600F8E6C0 /* NoneAdapter.swift in Sources */,
+				0168187D2442D40B00B0D4B1 /* PluginType.swift in Sources */,
 				0186FB412440D735004C7274 /* JSONRequestAdapter.swift in Sources */,
 				0186FB502440F04A004C7274 /* EmptyResponseDecision.swift in Sources */,
 				0186FB4A2440E5A0004C7274 /* DecodeJSONResultDecision.swift in Sources */,
