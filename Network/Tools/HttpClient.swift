@@ -65,7 +65,8 @@ struct HTTPClient {
                                       handler: @escaping (Result<Req.Response, Error>) -> Void) {
         
         if decisions.isEmpty {
-            fatalError("No decision left but did not reach a stop.")
+            handler(.failure(FlowError.decisionsEmpty))
+            return
         }
         
         var decisions = decisions

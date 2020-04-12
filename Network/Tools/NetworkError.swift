@@ -18,3 +18,7 @@ enum ResponseError: Error {
     case nonHTTPResponse
     case apiError(statusCode: Int, body: Data)
 }
+
+enum FlowError: Error {
+    case decisionsEmpty
+}
