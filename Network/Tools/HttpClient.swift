@@ -10,12 +10,9 @@ import Foundation
 
 struct HTTPClient {
 
-    let session: URLSession
+    let session: Session
     
-    // TODO: - Mock URLSession To Test
-    // TODO: - insert certificate pinning
-    
-    init(session: URLSession) {
+    init(session: Session) {
         self.session = session
     }
 
