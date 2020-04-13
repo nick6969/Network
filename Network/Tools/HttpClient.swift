@@ -84,9 +84,13 @@ struct HTTPClient {
             case .restart(let decisions):
                 self.send(request, decisions: decisions, plugins: plugins, handler: handler)
             case .errored(let error):
-                handler(.failure(error))
+                DispatchQueue.main.async {
+                    handler(.failure(error))
+                }
             case .done(let value):
-                handler(.success(value))
+                DispatchQueue.main.async {
+                    handler(.success(value))
+                }
             }
         }
     }
