@@ -12,7 +12,7 @@ struct QueryAdapter: Adapter {
     let url: URL
     let data: [String: String]?
     
-    func adapted(_ request: URLRequest) throws -> URLRequest {
+    func apply(_ request: URLRequest) throws -> URLRequest {
         guard let data = data else { return request }
         guard var urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             throw QueryError.urlNotCorrect

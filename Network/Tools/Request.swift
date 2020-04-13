@@ -46,7 +46,6 @@ extension Request {
         return [
             RetryDecision(retryCount: 2),
             StatusCodeDecision(),
-            EmptyResponseDecision(),
             DecodeJSONResultDecision()
         ]
     }
@@ -60,7 +59,7 @@ extension Request {
     // this method will build the url request
     func buildRequest() throws -> URLRequest {
         let request = URLRequest(url: url)
-        return try adapters.reduce(request) { try $1.adapted($0) }
+        return try adapters.reduce(request) { try $1.apply($0) }
     }
     
 }

@@ -11,7 +11,7 @@ import Foundation
 struct AnyAdapter: Adapter {
     let block: (URLRequest) throws -> URLRequest
     
-    func adapted(_ request: URLRequest) throws -> URLRequest {
+    func apply(_ request: URLRequest) throws -> URLRequest {
         return try block(request)
     }
 }

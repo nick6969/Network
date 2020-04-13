@@ -11,7 +11,7 @@ import Foundation
 struct FormURLAdapter: Adapter {
     let data: [String: Any]
     
-    func adapted(_ request: URLRequest) throws -> URLRequest {
+    func apply(_ request: URLRequest) throws -> URLRequest {
         var request = request
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpBody =

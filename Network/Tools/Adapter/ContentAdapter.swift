@@ -13,11 +13,11 @@ struct ContentAdapter: Adapter {
     let contentType: ContentType
     let content: [String: Any]
 
-    func adapted(_ request: URLRequest) throws -> URLRequest {
+    func apply(_ request: URLRequest) throws -> URLRequest {
         switch method {
         case .get: return request
         case .post:
-            return try contentType.adapter(for: content).adapted(request)
+            return try contentType.adapter(for: content).apply(request)
         }
     }
 }
