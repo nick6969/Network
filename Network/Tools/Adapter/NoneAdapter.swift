@@ -8,7 +8,9 @@
 
 import Foundation
 
+public
 struct NoneAdapter: Adapter {
+    public
     func apply(_ request: URLRequest) throws -> URLRequest {
         return request
     }

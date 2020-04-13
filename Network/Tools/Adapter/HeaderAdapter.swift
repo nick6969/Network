@@ -8,9 +8,11 @@
 
 import Foundation
 
+public
 struct HeaderAdapter: Adapter {
     let data: [String: String]?
     
+    public
     func apply(_ request: URLRequest) throws -> URLRequest {
         guard let data = data else { return request }
         var request = request

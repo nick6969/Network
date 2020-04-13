@@ -8,17 +8,20 @@
 
 import Foundation
 
+public
 enum QueryError: Error {
     case urlNotCorrect
     case queryItemError
 }
 
+public
 enum ResponseError: Error {
     case nilData
     case nonHTTPResponse
     case apiError(statusCode: Int, body: Data)
 }
 
+public
 enum FlowError: Error {
     case decisionsEmpty
 }

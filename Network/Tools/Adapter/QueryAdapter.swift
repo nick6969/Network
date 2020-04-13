@@ -8,10 +8,12 @@
 
 import Foundation
 
+public
 struct QueryAdapter: Adapter {
     let url: URL
     let data: [String: String]?
     
+    public
     func apply(_ request: URLRequest) throws -> URLRequest {
         guard let data = data else { return request }
         guard var urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: false) else {

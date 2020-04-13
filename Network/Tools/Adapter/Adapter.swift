@@ -8,6 +8,7 @@
 
 import Foundation
 
+public
 protocol Adapter {
     func apply(_ request: URLRequest) throws -> URLRequest
 }

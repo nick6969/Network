@@ -8,9 +8,11 @@
 
 import Foundation
 
+public
 struct FormURLAdapter: Adapter {
     let data: [String: Any]
     
+    public
     func apply(_ request: URLRequest) throws -> URLRequest {
         var request = request
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
