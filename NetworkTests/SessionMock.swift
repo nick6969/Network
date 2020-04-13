@@ -6,9 +6,8 @@
 //  Copyright © 2020 kciNniL. All rights reserved.
 //
 
-import Foundation
+@testable import Network
 
-// TODO: - move to test target, only using in test target
 final class MockSession {
     
     private let mockDataTask: MockSessionDataTask

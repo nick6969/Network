@@ -25,13 +25,13 @@
 		018224822444DB5000DE038B /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182246D2444DB5000DE038B /* HttpClient.swift */; };
 		018224832444DB5000DE038B /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182246E2444DB5000DE038B /* Method.swift */; };
 		018224842444DB5000DE038B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182246F2444DB5000DE038B /* Request.swift */; };
-		018224852444DB5000DE038B /* SessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224702444DB5000DE038B /* SessionMock.swift */; };
 		018224862444DB5000DE038B /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224712444DB5000DE038B /* ContentType.swift */; };
 		018224872444DB5000DE038B /* StatusCodeDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224732444DB5000DE038B /* StatusCodeDecision.swift */; };
 		018224882444DB5000DE038B /* Decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224742444DB5000DE038B /* Decision.swift */; };
 		018224892444DB5000DE038B /* RetryDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224752444DB5000DE038B /* RetryDecision.swift */; };
 		0182248A2444DB5000DE038B /* DecodeJSONResultDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224762444DB5000DE038B /* DecodeJSONResultDecision.swift */; };
 		0182248B2444DB5000DE038B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224772444DB5000DE038B /* NetworkError.swift */; };
+		0182248D2444E4B800DE038B /* SessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224702444DB5000DE038B /* SessionMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				018224502444D93800DE038B /* Info.plist */,
+				018224702444DB5000DE038B /* SessionMock.swift */,
 				0182244E2444D93800DE038B /* NetworkTests.swift */,
 			);
 			path = NetworkTests;
@@ -153,7 +154,6 @@
 				018224622444DB5000DE038B /* PluginType.swift */,
 				0182246F2444DB5000DE038B /* Request.swift */,
 				018224632444DB5000DE038B /* Session.swift */,
-				018224702444DB5000DE038B /* SessionMock.swift */,
 			);
 			name = Tools;
 			path = Network/Tools;
@@ -336,7 +336,6 @@
 				018224842444DB5000DE038B /* Request.swift in Sources */,
 				018224892444DB5000DE038B /* RetryDecision.swift in Sources */,
 				018224792444DB5000DE038B /* Session.swift in Sources */,
-				018224852444DB5000DE038B /* SessionMock.swift in Sources */,
 				018224872444DB5000DE038B /* StatusCodeDecision.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0182248D2444E4B800DE038B /* SessionMock.swift in Sources */,
 				0182244F2444D93800DE038B /* NetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
