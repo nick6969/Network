@@ -8,10 +8,12 @@
 
 import Foundation
 
+public
 enum Method: String {
     case get = "GET"
     case post = "POST"
     
+    public
     var adapter: AnyAdapter {
         return AnyAdapter { request in
             var request = request

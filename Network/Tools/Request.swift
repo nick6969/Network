@@ -8,6 +8,7 @@
 
 import Foundation
 
+public
 protocol Request {
     
     associatedtype Response: Decodable

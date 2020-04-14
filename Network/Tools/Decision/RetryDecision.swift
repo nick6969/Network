@@ -8,14 +8,17 @@
 
 import Foundation
 
+public
 struct RetryDecision: Decision {
     let retryCount: Int
     
+    public
     func shouldApply<Req>(request: Req, data: Data, response: HTTPURLResponse) -> Bool where Req: Request {
         let isStatusCodeValid = (200..<300).contains(response.statusCode)
         return !isStatusCodeValid && retryCount > 0
     }
 
+    public
     func apply<Req>(request: Req, data: Data, response: HTTPURLResponse, done closure: @escaping (DecisionAction<Req>) -> Void) where Req: Request {
         let retryDecision = RetryDecision(retryCount: retryCount - 1)
         var newDecisions = request.decisions

@@ -8,12 +8,15 @@
 
 import Foundation
 
+public
 struct StatusCodeDecision: Decision {
 
+    public
     func shouldApply<Req>(request: Req, data: Data, response: HTTPURLResponse) -> Bool where Req: Request {
         return !(200..<300).contains(response.statusCode)
     }
     
+    public
     func apply<Req>(request: Req, data: Data, response: HTTPURLResponse, done closure: @escaping (DecisionAction<Req>) -> Void) where Req: Request {
         closure(.errored(ResponseError.apiError(statusCode: response.statusCode, body: data)))
     }

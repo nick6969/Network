@@ -8,9 +8,11 @@
 
 import Foundation
 
+public
 struct AnyAdapter: Adapter {
     let block: (URLRequest) throws -> URLRequest
     
+    public
     func apply(_ request: URLRequest) throws -> URLRequest {
         return try block(request)
     }

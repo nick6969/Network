@@ -8,14 +8,16 @@
 
 import Foundation
 
+public
 struct HTTPClient {
 
-    let session: Session
+    private let session: Session
     
     init(session: Session) {
         self.session = session
     }
 
+    public
     func send<Req: Request>(_ request: Req,
                             plugins: [PluginType] = [],
                             handler: @escaping (Result<Req.Response, Error>) -> Void) {

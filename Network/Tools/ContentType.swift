@@ -8,11 +8,13 @@
 
 import Foundation
 
+public
 enum ContentType {
     case json
     case formURL
     case none
         
+    public
     func adapter(for data: [String: Any]) -> Adapter {
         switch self {
         case .json: return JSONRequestAdapter(data: data)

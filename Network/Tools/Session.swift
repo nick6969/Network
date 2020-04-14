@@ -8,6 +8,7 @@
 
 import Foundation
 
+public
 protocol Session {
 
     var delegate: URLSessionDelegate? { get }

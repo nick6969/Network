@@ -8,9 +8,11 @@
 
 import Foundation
 
+public
 struct JSONRequestAdapter: Adapter {
     let data: [String: Any]
     
+    public
     func apply(_ request: URLRequest) throws -> URLRequest {
         var request = request
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

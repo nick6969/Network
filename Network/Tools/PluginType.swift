@@ -8,6 +8,7 @@
 
 import Foundation
 
+public
 protocol PluginType {
     typealias ResultType = (Data?, URLResponse?, Error?)
     func willSend<Req: Request>(_ request: Req, urlRequest: URLRequest)

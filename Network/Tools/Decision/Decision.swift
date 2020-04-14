@@ -8,6 +8,7 @@
 
 import Foundation
 
+public
 enum DecisionAction<Req: Request> {
     case next(Data, HTTPURLResponse)
     case restart([Decision])
@@ -15,6 +16,7 @@ enum DecisionAction<Req: Request> {
     case done(Req.Response)
 }
 
+public
 protocol Decision {
     func shouldApply<Req: Request>(request: Req, data: Data, response: HTTPURLResponse) -> Bool
     func apply<Req: Request>(request: Req, data: Data, response: HTTPURLResponse, done closure: @escaping (DecisionAction<Req>) -> Void)
