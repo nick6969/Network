@@ -12,10 +12,10 @@ import XCTest
 class NLNetworkTests: XCTestCase {
 
     let expectation = XCTestExpectation(description: "should not hit any assert.")
+    let requestInfo: AppleStoreAppInfo = AppleStoreAppInfo(identifier: "", country: "")
 
     func testAppleStoreApi() {
-        let request: AppleStoreAppInfo = AppleStoreAppInfo(identifier: "", country: "")
-        let url: URL = request.url
+        let url: URL = requestInfo.url
         let data: Data = DataResource.getDataFromBundleFile(name: "mockResult", type: "json")
         let response: HTTPURLResponse = .init(url: url,
                                           mimeType: nil,
@@ -26,7 +26,7 @@ class NLNetworkTests: XCTestCase {
                                       response: response,
                                       error: nil,
                                       waiting: 0.3)
-        HTTPClient(session: mockSession).send(request) { result in
+        HTTPClient(session: mockSession).send(requestInfo) { result in
             switch result {
             case .success(let appleStoreAppInfoModel):
                 XCTAssert(appleStoreAppInfoModel.resultCount == 2, "resultCount should equal 2")
