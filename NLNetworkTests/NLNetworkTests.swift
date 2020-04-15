@@ -50,4 +50,17 @@ class NLNetworkTests: XCTestCase {
         wait(for: [expectation], timeout: 0.4)
     }
 
+    func testJsonAdapter() throws {
+        let request: URLRequest = .init(url: requestInfo.url)
+        let testData: [String: String] = ["testKey": "test"]
+        let jsonAdapter: JSONRequestAdapter = JSONRequestAdapter(data: testData)
+        let resultRequest: URLRequest = try jsonAdapter.apply(request)
+
+        let expectHeader: String = "application/json"
+        assert(resultRequest.allHTTPHeaderFields?["Content-Type"] == expectHeader, "request header should be \(expectHeader) but found \(String(describing: resultRequest.allHTTPHeaderFields?["Content-Type"]))")
+
+        let expectedBody: Data = try JSONSerialization.data(withJSONObject: testData, options: [])
+        assert(resultRequest.httpBody == expectedBody, "httpBody should be \(expectedBody)")
+    }
+
 }
