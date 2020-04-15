@@ -38,6 +38,11 @@ struct HTTPClient {
             return
         }
         
+        if urlRequest.httpMethod == nil {
+            handler(.failure(QueryError.methodNotSetup))
+            return
+        }
+        
         plugins.forEach { $0.willSend(request, urlRequest: urlRequest) }
         
         session.dataTask(with: urlRequest) { data, response, error in

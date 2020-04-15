@@ -16,12 +16,4 @@ enum Method: String {
     case put = "PUT"
     case delete = "DELETE"
     
-    public
-    var adapter: AnyAdapter {
-        return AnyAdapter { request in
-            var request = request
-            request.httpMethod = self.rawValue
-            return request
-        }
-    }
 }

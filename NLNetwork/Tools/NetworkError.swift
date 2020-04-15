@@ -12,6 +12,7 @@ public
 enum QueryError: Error {
     case urlNotCorrect
     case queryItemError
+    case methodNotSetup
 }
 
 public
