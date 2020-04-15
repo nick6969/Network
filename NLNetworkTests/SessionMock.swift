@@ -6,7 +6,8 @@
 //  Copyright © 2020 kciNniL. All rights reserved.
 //
 
-@testable import Network
+@testable import NLNetwork
+import Foundation
 
 final class MockSession {
     

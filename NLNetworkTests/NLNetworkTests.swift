@@ -1,30 +1,30 @@
 //
-//  NetworkTests.swift
-//  NetworkTests
+//  NLNetworkTests.swift
+//  NLNetworkTests
 //
-//  Created by Nick on 4/14/20.
+//  Created by kidnapper on 2020/4/15.
 //  Copyright © 2020 kciNniL. All rights reserved.
 //
 
 import XCTest
-@testable import Network
+@testable import NLNetwork
 
-class NetworkTests: XCTestCase {
+class NLNetworkTests: XCTestCase {
 
-    override func setUpWithError() throws {
+    override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testPerformanceExample() throws {
+    func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
