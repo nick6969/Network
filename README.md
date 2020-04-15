@@ -1,7 +1,9 @@
 # Network
 
 [![Actions Status](https://github.com/nick6969/Network/workflows/TestOnPR/badge.svg)](https://github.com/nick6969/Network/actions)
-[![codecov.io](https://codecov.io/github/nick6969/Network/coverage.svg?branch=master)](https://codecov.io/github/nick6969/Network?branch=master)
+
+![GitHub](https://img.shields.io/github/license/nick6969/Network)
+
 
 This Project reference the [ComponentNetworking](https://github.com/onevcat/ComponentNetworking)
 
