@@ -51,15 +51,16 @@ extension Request {
         ]
     }
     
-    // if customer adapters, remeber use defaultAdapter
+    // if customer adapters, remember use defaultAdapter
     var adapters: [Adapter] { defaultAdapter }
     
-    // using defaultDecisions to convert data to response model, can custome by your self
+    // using defaultDecisions to convert data to response model, can customer by your self
     var decisions: [Decision] { defaultDecisions }
 
     // this method will build the url request
     func buildRequest() throws -> URLRequest {
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request = try MethodAdapter(method: method).apply(request)
         return try adapters.reduce(request) { try $1.apply($0) }
     }
     
