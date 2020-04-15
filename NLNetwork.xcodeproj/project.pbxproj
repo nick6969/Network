@@ -13,7 +13,6 @@
 		C1CD3E222446176A00B3B599 /* NLNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182244E2444D93800DE038B /* NLNetworkTests.swift */; };
 		C1CD3E232446176A00B3B599 /* SessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224702444DB5000DE038B /* SessionMock.swift */; };
 		C1CD3E242446176A00B3B599 /* DataResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17239F22445EA98001DCC61 /* DataResource.swift */; };
-		C1CD3E25244617F600B3B599 /* AppleStoreAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182245D2444DB4800DE038B /* AppleStoreAppInfo.swift */; };
 		C1CD3E26244617F600B3B599 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182245E2444DB4800DE038B /* Logger.swift */; };
 		C1CD3E272446180D00B3B599 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182246A2444DB5000DE038B /* Adapter.swift */; };
 		C1CD3E282446180D00B3B599 /* AnyAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018224692444DB5000DE038B /* AnyAdapter.swift */; };
@@ -54,7 +53,6 @@
 		018224442444D93700DE038B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0182244E2444D93800DE038B /* NLNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLNetworkTests.swift; sourceTree = "<group>"; };
 		018224502444D93800DE038B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0182245D2444DB4800DE038B /* AppleStoreAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleStoreAppInfo.swift; sourceTree = "<group>"; };
 		0182245E2444DB4800DE038B /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		018224622444DB5000DE038B /* PluginType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginType.swift; sourceTree = "<group>"; };
 		018224632444DB5000DE038B /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 		0182245C2444DB4800DE038B /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				0182245D2444DB4800DE038B /* AppleStoreAppInfo.swift */,
 				0182245E2444DB4800DE038B /* Logger.swift */,
 			);
 			path = Demo;
@@ -431,7 +428,6 @@
 				C1CD3E352446180D00B3B599 /* Method.swift in Sources */,
 				C1CD3E302446180D00B3B599 /* DecodeJSONResultDecision.swift in Sources */,
 				C1CD3E2C2446180D00B3B599 /* JSONRequestAdapter.swift in Sources */,
-				C1CD3E25244617F600B3B599 /* AppleStoreAppInfo.swift in Sources */,
 				C1CD3E392446180D00B3B599 /* Session.swift in Sources */,
 				C1CD3E372446180D00B3B599 /* PluginType.swift in Sources */,
 				C1CD3E362446180D00B3B599 /* NetworkError.swift in Sources */,

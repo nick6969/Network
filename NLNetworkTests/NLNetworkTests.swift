@@ -9,18 +9,62 @@
 import XCTest
 @testable import NLNetwork
 
+struct AppleStoreAppInfo {
+    let identifier: String
+    let country: String
+}
+
+extension AppleStoreAppInfo: Request {
+
+    var url: URL { URL(string: "http://itunes.apple.com/lookup")! }
+    var query: [String: String]? {
+        ["id": identifier,
+         "country": country,
+         "time": "\(Date().timeIntervalSince1970)"]
+    }
+
+    typealias Response = AppleStoreAppInfoModel
+}
+
+struct AppleStoreAppInfoModel: Decodable {
+    let resultCount: Int
+    let results: [AppleStoreAppInfoResultModel]
+}
+
+struct AppleStoreAppInfoResultModel: Decodable {
+    let version: String
+    let trackCensoredName: String
+    let description: String
+    let languageCodesISO2A: [String]
+}
+
+struct EmptyModel: Decodable, Comparable {
+    static func < (lhs: EmptyModel, rhs: EmptyModel) -> Bool {
+        return true
+    }
+}
+
+struct EmptyResponseRequest: Request {
+
+    typealias Response = EmptyModel
+
+    var url: URL { URL(string: "http://empty.com")! }
+
+}
+
 class NLNetworkTests: XCTestCase {
 
     let expectation = XCTestExpectation(description: "should not hit any assert.")
     let requestInfo: AppleStoreAppInfo = AppleStoreAppInfo(identifier: "", country: "")
 
     func testAppleStoreApi() {
+
         let url: URL = requestInfo.url
         let data: Data = DataResource.getDataFromBundleFile(name: "mockResult", type: "json")
         let response: HTTPURLResponse = .init(url: url,
-                                          mimeType: nil,
-                                          expectedContentLength: 1024,
-                                          textEncodingName: nil)
+                                              mimeType: nil,
+                                              expectedContentLength: 1024,
+                                              textEncodingName: nil)
         
         let mockSession = MockSession(data: data,
                                       response: response,
@@ -50,6 +94,32 @@ class NLNetworkTests: XCTestCase {
         wait(for: [expectation], timeout: 0.4)
     }
 
+    func testEmptyModel() {
+        let request: EmptyResponseRequest = EmptyResponseRequest()
+        let url: URL = request.url
+        let response: HTTPURLResponse = .init(url: url,
+                                              mimeType: nil,
+                                              expectedContentLength: 1024,
+                                              textEncodingName: nil)
+
+        let mockSession = MockSession(data: "{}".data(using: .utf8)!,
+                                      response: response,
+                                      error: nil,
+                                      waiting: 0.3)
+        let expectModel: EmptyModel = EmptyModel()
+        HTTPClient(session: mockSession).send(request) { result in
+            switch result {
+            case .success(let emptyModel):
+                XCTAssert(emptyModel == expectModel, "model should be EmptyModel")
+                self.expectation.fulfill()
+
+            case .failure(let error):
+                XCTFail("should not be failure error: \(error)")
+            }
+        }
+        wait(for: [expectation], timeout: 0.4)
+    }
+
     func testJsonAdapter() throws {
         let request: URLRequest = .init(url: requestInfo.url)
         let testData: [String: String] = ["testKey": "test"]
@@ -57,10 +127,32 @@ class NLNetworkTests: XCTestCase {
         let resultRequest: URLRequest = try jsonAdapter.apply(request)
 
         let expectHeader: String = "application/json"
-        assert(resultRequest.allHTTPHeaderFields?["Content-Type"] == expectHeader, "request header should be \(expectHeader) but found \(String(describing: resultRequest.allHTTPHeaderFields?["Content-Type"]))")
+        assert(resultRequest.allHTTPHeaderFields?["Content-Type"] == expectHeader, "request header should be \(expectHeader) but found \(String(describing: resultRequest.allHTTPHeaderFields?["Content-Type"])).")
 
         let expectedBody: Data = try JSONSerialization.data(withJSONObject: testData, options: [])
         assert(resultRequest.httpBody == expectedBody, "httpBody should be \(expectedBody)")
+    }
+
+    func testAnyAdapter() throws {
+
+        struct AnyAdapter: Adapter {
+            let block: (URLRequest) throws -> URLRequest
+
+            public
+            func apply(_ request: URLRequest) throws -> URLRequest {
+                return try block(request)
+            }
+        }
+
+        let request: URLRequest = .init(url: requestInfo.url)
+        let adapter: AnyAdapter = AnyAdapter { request -> URLRequest in
+            var request = request
+            request.httpMethod = Method.post.rawValue
+            return request
+        }
+        let resultRequest: URLRequest = try adapter.apply(request)
+
+        assert(resultRequest.httpMethod == Method.post.rawValue, "request method should be \(Method.post.rawValue) but found \(String(describing: resultRequest.httpMethod)).")
     }
 
 }
